@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --darkest-gray: rgb(5, 5, 5);
+  --very-dark-gray: rgb(10, 10, 11);
+  --dark-gray-1: rgb(15, 15, 16);
+  --dark-gray-2: rgb(15, 15, 16);
+  --almost-black: rgb(18, 18, 18);
+  --dark-gray-3: rgb(20, 20, 21);
+  --dark-gray-4: rgb(25, 25, 26);
+  --border-color: rgb(32, 32, 33);
+  --dark-gray-6: rgb(40, 40, 42);
+  --dark-gray-7: rgb(45, 45, 47);
+  --dark-gray-8: rgb(55, 55, 57);
+  --medium-dark-gray: rgb(62, 62, 65);
+  --medium-gray: rgb(102, 102, 102);
+  --light-gray-1: rgb(117, 117, 117);
+  --light-gray-2: rgb(153, 153, 153);
+  --light-gray-3: rgb(204, 204, 204);
+  --light-gray-4: rgb(217, 217, 217);
+  --very-light-gray: rgb(230, 230, 230);
+  --near-white: rgb(242, 242, 242);
+  --almost-white: rgb(252, 252, 252);
+  --image-bg: #0e0e0e;
+
+  --font-Space_Grotesk: "Space Grotesk", serif;
+  --font-IBM_Plex_Mono: "IBM Plex Mono", monospace;
+}
+
+[data-theme="light"] {
+  --white: rgb(43 54 86);
+  --black: rgb(0, 0, 0);
+  --darkest-gray: rgb(239 243 255);
+  --very-dark-gray: rgb(233 238 255);
+  --dark-gray-1: rgb(213 221 255);
+  --dark-gray-2: rgb(213 221 255);
+  --almost-black: rgb(224 226 255);
+  --dark-gray-3: rgb(200 207 255);
+  --dark-gray-4: #babad4e6;
+  --border-color: rgb(213 213 213);
+  --dark-gray-6: rgb(205 205 208);
+  --dark-gray-7: rgb(190, 190, 210);
+  --dark-gray-8: rgb(55, 55, 57);
+  --medium-dark-gray: rgb(62, 62, 65);
+  --medium-gray: rgb(102, 102, 102);
+  --light-gray-1: rgb(161 172 205);
+  --light-gray-2: rgb(134 137 165);
+  --light-gray-3: rgb(90 94 150);
+  --light-gray-4: rgb(57 60 80);
+  --very-light-gray: rgb(25 35 51);
+  --near-white: rgb(242, 242, 242);
+  --image-bg: #dde6ff;
+  --font-Space_Grotesk: "Space Grotesk", serif;
+  --font-IBM_Plex_Mono: "IBM Plex Mono", monospace;
+}
+
+* {
+  font-family: var(--font-Space_Grotesk);
+}
+html {
+  scroll-behavior: smooth !important;
+}
+
+body {
+  background-color: var(--darkest-gray);
+  color: var(--white);
+}
+
+.maskImage {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.custom-padding {
+  padding: calc(max(0, 10) * 1px);
+}
+.flexFlow {
+  flex-flow: column;
+}
+
+.waveHand {
+  animation: wave-animation 2.5s ease-in-out infinite;
+  transform-origin: 70% 70%;
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(14deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(12deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  60% {
+    transform: rotate(6deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--darkest-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark-gray-6);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark-gray-7);
+}
