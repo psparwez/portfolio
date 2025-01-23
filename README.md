@@ -1,4 +1,7 @@
 # 👋 Portfolio Portfolio
+A sleek and modern portfolio website built with Next.js, showcasing professional experience and projects in a minimalist, user-friendly design. 💯
+
+
 
 ## 📸 Demo Screenshots
 ![Image](https://github.com/user-attachments/assets/79250590-04ed-43fa-82ed-4cc64b1a7971)
@@ -12,7 +15,7 @@ Follow these steps to run the project locally:
 
 Make sure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v14 or later)
+- [Node.js](https://nodejs.org/) (v18 or later)
 - [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
 ### Installation
