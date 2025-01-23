@@ -27,9 +27,9 @@ export default function ShowCase({ isMore = true, showData = 2 }: {
                             once: true,
                         }}
                         className="flex-none h-auto relative w-full " key={item.id}>
-                        <div className="bg-very-dark-gray w-full border border-dark-gray-3 rounded-xl flex items-center flex-nowrap gap-5 h-min justify-start overflow-visible p-[8px_24px_8px_8px] relative ">
-                            <div className="flex-1 rounded-xl h-[180px] relative ">
-                                <figure className='absolute h-full w-full inset-0 rounded-xl '>
+                        <div className="bg-very-dark-gray w-full border border-dark-gray-3 rounded-xl flex items-center flex-nowrap flex-col lg:flex-row  gap-5 h-min justify-start overflow-visible p-4 lg:p-[8px_24px_8px_8px] relative ">
+                            <div className="lg:flex-1 w-full rounded-xl h-[180px] relative ">
+                                <figure className='lg:absolute relative h-full w-full inset-0 rounded-xl '>
                                     <Image src={item.image} className='w-full block h-full rounded-[inherit] object-cover object-center ' height={180} width={180} alt={item.title} />
                                 </figure>
                             </div>

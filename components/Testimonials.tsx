@@ -14,7 +14,7 @@ export default function Testimonials() {
                 <SectionHeading icon={starLig} title='Words From Happy Clients' description='Discover what satisfied clients have to say about their experiences working with me.' />
             </div>
 
-            <div className="grid flex-none gap-[10px] h-min justify-center overflow-visible p-0 relative w-full grid-cols-[repeat(2,minmax(50px,1fr))] grid-rows-[repeat(2,min-content)] ">
+            <div className="grid flex-none gap-[10px] h-min justify-center overflow-visible p-0 relative w-full grid-cols-1 lg:grid-cols-[repeat(2,minmax(50px,1fr))] lg:grid-rows-[repeat(2,min-content)] ">
                 {testimonials?.map((testimonial, index) => (
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

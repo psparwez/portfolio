@@ -17,7 +17,7 @@ export default function MyStack() {
                 <motion.ul
                     initial={{ opacity: 0, }}
                     whileInView={{ opacity: 1, }}
-                    className="grid gap-[10px] flex-none auto-rows-min h-min justify-center overflow-visible relative p-0 w-full grid-cols-[repeat(2,minmax(50px,1fr))] grid-rows-[repeat(2,min-content)] ">
+                    className="grid gap-[10px] flex-none auto-rows-min h-min justify-center overflow-visible relative p-0 w-full lg:grid-cols-[repeat(2,minmax(50px,1fr))] grid-cols-1 lg:grid-rows-[repeat(2,min-content)] ">
                     {
                         myStack?.map((stack, index) => (
 
