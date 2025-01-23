@@ -18,7 +18,7 @@ export default function ContactForm({ followerData, rightArrow }: ContactFormPro
             {/* Form Section */}
             <motion.div
                 initial="hidden"
-                whileInView="visible"
+                animate="visible"
                 variants={formVariants}
                 viewport={{ once: true }}
                 className="flex flex-col gap-6 w-full"
@@ -56,7 +56,7 @@ export default function ContactForm({ followerData, rightArrow }: ContactFormPro
             {/* Follower List Section */}
             <motion.div
                 initial="hidden"
-                whileInView="visible"
+                animate="visible"
                 variants={listVariants}
                 viewport={{ once: true }}
                 className="flex flex-col gap-4"

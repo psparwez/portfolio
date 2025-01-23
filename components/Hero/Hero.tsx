@@ -28,7 +28,7 @@ export default function Hero() {
                     <div className="flex flex-col gap-1">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
-                            whileInView={{
+                            animate={{
                                 opacity: 1,
                                 y: 0
                             }}
@@ -42,7 +42,7 @@ export default function Hero() {
                         </motion.div>
                         <motion.h1
                             initial={{ opacity: 0, y: 30 }}
-                            whileInView={{
+                            animate={{
                                 opacity: 1,
                                 y: 0
                             }}
@@ -55,7 +55,7 @@ export default function Hero() {
 
                     <motion.p
                         initial={{ opacity: 0, y: 30 }}
-                        whileInView={{
+                        animate={{
                             opacity: 1,
                             y: 0
                         }}
@@ -67,7 +67,7 @@ export default function Hero() {
 
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
-                        whileInView={{
+                        animate={{
                             opacity: 1,
                             y: 0
                         }}
@@ -82,7 +82,7 @@ export default function Hero() {
             {/* middle  */}
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{
+                animate={{
                     opacity: 1,
                     y: 0
                 }}

@@ -23,6 +23,7 @@ export default function SearvicesPage() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{
                 once: true,
+                amount: 0.5,
               }}
               className="place-self-start h-auto w-full relative" key={plan.id}>
               <div className="rounded-xl flex flexFlow items-end place-items-end gap-5 h-min p-6 relative border bg-very-dark-gray border-dark-gray-3 ">

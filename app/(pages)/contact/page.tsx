@@ -1,3 +1,4 @@
+"use client"
 import type React from "react"
 import { emailIcon, questionMarkIcon, rightArrow } from "@/app/assets/assets"
 import SectionHeading from "@/components/SectionHeading"
