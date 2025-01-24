@@ -1,8 +1,8 @@
 "use client"
 import type React from "react"
-import { emailIcon, questionMarkIcon, rightArrow } from "@/app/assets/assets"
+import { emailIcon, questionMarkIcon } from "@/app/assets/assets"
 import SectionHeading from "@/components/SectionHeading"
-import { faqData, followerData } from "@/data"
+import { faqData } from "@/data"
 import Button from "@/components/ui/Button"
 import { Calendar1, Mail } from "lucide-react"
 import ContactForm from "@/components/ContactForm/ContactForm"
@@ -25,7 +25,7 @@ export default function ContactPage() {
           </div>
         </SectionHeading>
 
-        <ContactForm followerData={followerData} rightArrow={rightArrow} />
+        <ContactForm />
 
         <SectionHeading
           icon={questionMarkIcon}
