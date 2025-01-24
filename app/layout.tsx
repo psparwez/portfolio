@@ -6,7 +6,7 @@ import SocialLists from "@/components/Socials/SocialLists";
 import Footer from "@/components/Footer/Footer";
 import { ThemeProvider } from "@/providers/theme-provider";
 import SideNavbar from "@/components/SideNavbar/SideNavbar";
-
+import { Analytics } from "@vercel/analytics/react"
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-Space_Grotesk",
   subsets: ["latin"],
@@ -53,6 +53,7 @@ export default function RootLayout({
             <SocialLists />
           </div>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
