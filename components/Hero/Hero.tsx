@@ -1,16 +1,25 @@
 "use client"
-import { AvatarMe, handGif } from '@/app/assets/assets'
+import { AvatarMe, calendarIcon, handGif } from '@/app/assets/assets'
 import Image from 'next/image'
 import React from 'react'
-import { Calendar1, Mail, } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import Button from '../ui/Button'
 
 import { motion } from "framer-motion"
 import AnimatedImageGrid from '../ui/AnimatedImageGrid'
 import Brandcontainer from '../Brandcontainer/Brandcontainer'
 import CounterContainer from '../CounterContainer/CounterContainer'
+import ScheduleButton from '../ui/ScheduleButton'
 
 export default function Hero() {
+    const handleClick = () => {
+        const email = "example@gmail.com";
+        const subject = "Schedule a Call";
+        const body = "Hi, I'd like to schedule a call.";
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(mailtoLink, "_blank");
+    };
+
     return (
         <div className="flex flex-none flex-col flex-nowrap gap-[30px] h-min justify-start overflow-visible p-0 relative w-full ">
             {/* top  */}
@@ -74,8 +83,10 @@ export default function Hero() {
                         transition={{ duration: 0.5, type: "spring", stiffness: 100, delay: 0.4 }}
                         viewport={{ once: true }}
                         className="flex  items-start flex-none flex-nowrap  w-full gap-5 h-min justify-start p-0 relative">
-                        <Button position='left' icon={<Mail size={18} />} title='Email Me' />
-                        <Button position='left' icon={<Calendar1 size={18} />} title='Schedule Call' />
+                        <Button onClick={handleClick} position='left' icon={<Mail size={18} />} title='Email Me' />
+                        {/* <Button position='left' icon={<Calendar1 size={18} />} 
+                        title='Schedule Call' /> */}
+                        <ScheduleButton icon={calendarIcon} label='Schedule call' />
                     </motion.div>
                 </div>
             </section>
