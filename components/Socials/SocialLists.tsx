@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 export default function SocialLists() {
     return (
-        <aside className='max-w-[13%] w-full  h-screen top-0 flex-none sticky z-10 '>
+        <aside className='hidden lg:block max-w-[13%] w-full  h-screen top-0 flex-none sticky z-10 '>
             <div className="flex items-start overflow-hidden justify-center h-full flex-nowrap relative p-0 flex-col gap-2 ">
                 {/* middle  */}
                 <div className="flex items-start overflow-hidden justify-center h-full flex-nowrap relative p-[20px_0px_40px_30px] flex-col flex-1 border-l border-border-color">
