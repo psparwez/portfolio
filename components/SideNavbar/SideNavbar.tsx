@@ -10,11 +10,25 @@ import Tooltip from '../ui/Tooltop';
 import { pagesLists } from '@/data';
 import { motion } from "framer-motion"
 
-export default function SideNavbar() {
+interface SideNavbarProps {
+    isMenuOpen?: boolean;
+}
+
+export default function SideNavbar({isMenuOpen}:SideNavbarProps) {
     const pathname = usePathname()
 
     return (
-        <div className="max-w-[13%] w-full border-r border-border-color h-screen sticky top-0 flex-none z-10">
+        <motion.div
+        initial={{ x: "-100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "-100%" }}
+        transition={{ duration: 0.5, type: "spring" }}
+        className=" absolute lg:block max-w-[13%] w-full border-r border-border-color h-screen md:sticky top-0 flex-none z-10"
+        style={{
+            left : isMenuOpen ? "0" : "-100%",
+            maxWidth: isMenuOpen ? "140px" : "13%", 
+        }}
+        >
             <div className="flex items-end justify-between h-full flex-none flex-nowrap relative p-[20px_30px_40px_0px] flex-col">
                 {/* top */}
                 <Link
@@ -86,6 +100,6 @@ export default function SideNavbar() {
                     <Tooltip content="Go to Top" position='top' />
                 </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 }

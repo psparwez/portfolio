@@ -19,7 +19,7 @@ export default function FollowerLists({ followerData, rightArrow }: ContactFormP
             animate="visible"
             variants={listVariants}
             viewport={{ once: true }}
-            className="flex flex-col gap-4"
+            className="hidden  lg:flex flex-col gap-4"
         >
             <ul className="flex flex-col gap-4">
                 {followerData.map((data, index) => (

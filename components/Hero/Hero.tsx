@@ -14,8 +14,8 @@ export default function Hero() {
     return (
         <div className="flex flex-none flex-col flex-nowrap gap-[30px] h-min justify-start overflow-visible p-0 relative w-full ">
             {/* top  */}
-            <section className="flex items-center flex-none flex-nowrap gap-[20px] h-min justify-start overflow-visible p-0 relative w-full ">
-                <div className="flex items-center flex-none flex-nowrap flex-col gap-[10px] h-min justify-center p-0 relative w-min overflow-hidden">
+            <section className="flex flex-col lg:flex-row items-center flex-none flex-nowrap gap-[20px] h-min justify-start overflow-visible p-0 relative w-full ">
+                <div className="flex items-start w-full md:items-center flex-none flex-nowrap flex-col gap-[10px] h-min justify-center p-0 relative md:w-min overflow-hidden">
 
                     <div className="aspect-auto flex-none h-auto w-[260px] relative bg-image-bg rounded-lg">
                         <figure className='h-full w-full'>

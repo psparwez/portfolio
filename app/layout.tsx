@@ -45,7 +45,7 @@ export default function RootLayout({
         >
           <div className="flex items-start w-full">
             <SideNavbar />
-            <div className="flex-1">
+            <div className="w-full lg:flex-1">
               <Navbar />
               <main>{children}</main>
               <Footer />

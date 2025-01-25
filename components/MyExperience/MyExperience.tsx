@@ -27,7 +27,7 @@ export default function MyExperience() {
                                 viewport={{
                                     once: true,
                                 }}
-                                key={exp.id} className='bg-very-dark-gray border border-dark-gray-3 w-full rounded-xl flex flex-col flex-nowrap gap-5 h-min justify-start overflow-visible p-6 relative'>
+                                key={exp.id} className='bg-very-dark-gray border border-dark-gray-3 w-full rounded-xl flex flex-col flex-nowrap gap-5 h-min justify-start overflow-visible p-4 sm:p-6 relative'>
                                 <div className="w-full flex justify-between flex-none items-center h-min flex-nowrap overflow-visible p-0 relative">
                                     <div className="flex items-center flex-1 gap-2 h-min justify-start overflow-visible p-0 relative ">
                                         <div className="bg-dark-gray-4 border border-border-color rounded-lg flex float-none gap-[10px] h-min justify-center items-center overflow-visible p-[10px] relative w-min ">
@@ -53,7 +53,7 @@ export default function MyExperience() {
 
                                             <div className="bg-dark-gray-2 border border-dark-gray-3 flex flex-none items-center justify-start flex-nowrap gap-[10px] h-min overflow-visible p-[4px_10px] relative w-min rounded-3xl ">
                                                 <div className="flex-none h-auto relative whitespace-pre w-auto flex flex-col justify-start flex-shrink-0">
-                                                    <p className='font-medium text-[14px]  text-light-gray-2'>
+                                                    <p className='font-medium text-xs sm:text-[14px]  text-light-gray-2'>
                                                         {exp.label}
                                                     </p>
                                                 </div>
@@ -63,7 +63,7 @@ export default function MyExperience() {
                                     </div>
 
                                     <div className="flex flex-nowrap gap-[10px] h-min overflow-visible p-0 w-min items-center flex-none whitespace-pre">
-                                        <h3 className='text-light-gray-4 font-bold text-[22px] leading-[1.2em] '>
+                                        <h3 className='text-light-gray-4 font-bold text-lg sm:text-[22px] leading-[1.2em] '>
                                             {exp.year}
 
                                         </h3>
