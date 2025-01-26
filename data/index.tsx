@@ -230,28 +230,28 @@ export const myServices: myServicesTypes[] = [
     title: 'Web Design',
     description: 'Crafting visually captivating and user-friendly websites for online success.',
     icon: webDesignIcon,
-    link: 'http://localhost:3000/services'
+    link: '/services'
   },
   {
     id: 2,
     title: 'Web Development',
     description: 'Bringing ideas to life with robust and scalable web solutions.',
     icon: webDevIcon,
-    link: 'http://localhost:3000/services'
+    link: '/services'
   },
   {
     id: 3,
     title: 'Graphic Design',
     description: 'Creating visually stunning designs that captivate and engage audiences.',
     icon: graphicDesignIcon,
-    link: 'http://localhost:3000/services'
+    link: '/services'
   },
   {
     id: 4,
     title: 'SEO Optimization',
     description: 'Elevating online visibility and driving organic traffic through strategies.',
     icon: seoOptIcon,
-    link: 'http://localhost:3000/services'
+    link: '/services'
   }
 ]
 
