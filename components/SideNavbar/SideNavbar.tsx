@@ -39,8 +39,8 @@ export default function SideNavbar({isMenuOpen}:SideNavbarProps) {
                         <div className="absolute rounded-full inset-0">
                             <Image
                                 src={AvatarMe}
-                                width={25}
-                                height={25}
+                                fill
+                                quality={100}                                
                                 alt="Avatar"
                                 className="block w-full h-full rounded-full opacity-80 object-fill object-center"
                             />
