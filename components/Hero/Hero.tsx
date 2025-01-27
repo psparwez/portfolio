@@ -13,7 +13,7 @@ import ScheduleButton from '../ui/ScheduleButton'
 
 export default function Hero() {
     const handleClick = () => {
-        const email = "example@gmail.com";
+        const email =  process.env.NEXT_PUBLIC_TO_EMAIL;
         const subject = "Schedule a Call";
         const body = "Hi, I'd like to schedule a call.";
         const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
