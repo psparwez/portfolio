@@ -11,7 +11,7 @@ import FAQ from "@/components/FAQ/FAQ"
 export default function ContactPage() {
   return (
     <div className="flex flex-col flex-1 gap-0 h-min overflow-hidden p-0 relative w-full items-center justify-start">
-      <div className="flex flex-col gap-[60px] max-w-[750px] w-[80%] items-center p-[80px_0px]">
+      <div className="flex flex-col gap-[60px] w-full max-w-full px-5 lg:px-0 lg:max-w-[750px] lg:w-[80%] items-center p-[80px_0px]">
         <SectionHeading
           icon={emailIcon}
           title="I Love to hear from you."

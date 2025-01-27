@@ -13,7 +13,7 @@ import ScheduleButton from '@/components/ui/ScheduleButton'
 export default function SearvicesPage() {
   return (
     <div className="flex flex-1 flex-col gap-0 h-min overflow-hidden p-0 relative w-w-full flex-nowrap items-center justify-start">
-      <div className='gap-[60px] flex-col max-w-[750px] w-[80%] flex-nowrap flex items-center flex-none h-min justify-center  relative overflow-visible p-[80px_0px]  ' >
+      <div className='gap-[60px] flex-col max-w-full w-full lg:max-w-[750px] px-5 lg:px-0 lg:w-[80%] flex-nowrap flex items-center flex-none h-min justify-center  relative overflow-visible p-[80px_0px]  ' >
         <SectionHeading icon={zapIcon} title='My Services' description='Formulating comprehensive strategies to meet your design goals and exceed expectations.' />
 
         <div className="flex-0 w-full gap-[10px] h-min grid justify-center overflow-visible p-0 relative grid-cols-1 lg:grid-cols-[repeat(2,minmax(50px,1fr))] lg:grid-rows-[repeat(2,min-content)] ">
