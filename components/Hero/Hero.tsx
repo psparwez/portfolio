@@ -13,7 +13,7 @@ import ScheduleButton from '../ui/ScheduleButton'
 
 export default function Hero() {
     const handleClick = () => {
-        const email =  process.env.NEXT_PUBLIC_TO_EMAIL;
+        const email = process.env.NEXT_PUBLIC_TO_EMAIL;
         const subject = "Schedule a Call";
         const body = "Hi, I'd like to schedule a call.";
         const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -25,8 +25,8 @@ export default function Hero() {
             {/* top  */}
             <section className="flex flex-col lg:flex-row items-center flex-none flex-nowrap gap-[20px] h-min justify-start overflow-visible p-0 relative w-full ">
                 <div className="flex items-start w-full md:items-center flex-none flex-nowrap flex-col gap-[10px] h-min justify-center p-0 relative md:w-min overflow-hidden">
-
-                    <div className="aspect-auto flex-none h-auto w-[260px] relative bg-image-bg rounded-lg">
+                    <div
+                        className="aspect-auto flex-none h-auto w-[260px] relative bg-image-bg rounded-lg">
                         <figure className='h-full w-full'>
                             <Image src={AvatarMe} alt='Avatar' width={300} height={300} className='w-full h-full object-cover' />
                             <AnimatedImageGrid image={AvatarMe} />
