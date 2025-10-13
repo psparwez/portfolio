@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 
 export default function MyStack() {
     return (
-        <div className='flex items-start flex-none flex-col flex-nowrap gap-[30px] h-min justify-start overflow-visible relative w-full '>
+        <section className='flex items-start flex-none flex-col flex-nowrap gap-[30px] h-min justify-start overflow-visible relative w-full ' aria-labelledby="my-stacks">
             <div className="flex-none h-auto relative w-full">
                 <SectionHeading icon={stackIcon} title='My Stacks' description='Commitment to staying updated with the latest design trends and techniques.' />
             </div>
@@ -30,7 +30,7 @@ export default function MyStack() {
                                     once: true,
                                 }}
                                 className="w-full">
-                                <Link href={stack.link} className='w-full bg-very-dark-gray border border-dark-gray-3 rounded-xl flex cursor-pointer items-center flex-nowrap gap-[10px] h-min justify-start overflow-visible relative p-[14px_24px_14px_14px] group hover:bg-almost-black transition-all duration-500'>
+                                <Link href={stack.link} aria-label={`View more about ${stack.title}`} className='w-full bg-very-dark-gray border border-dark-gray-3 rounded-xl flex cursor-pointer items-center flex-nowrap gap-[10px] h-min justify-start overflow-visible relative p-[14px_24px_14px_14px] group hover:bg-almost-black transition-all duration-500'>
                                     {/* logo  */}
                                     <div className="bg-dark-gray-4 border border-border-color rounded-[7px] flex items-center flex-none flex-nowrap gap-[10px] h-min justify-center overflow-hidden p-2 relative w-min  ">
                                         <div className="aspect-square flex-none h-auto overflow-hidden relative w-[30px]  ">
@@ -53,7 +53,7 @@ export default function MyStack() {
                                     {/* arrow  */}
                                     <div className="aspect-square flex-none h-auto w-[24px] overflow-hidden relative opacity-50 group-hover:opacity-100 ">
                                         <div className="absolute rounded-full inset-0 flex items-center justify-center w-full h-full">
-                                            <Image src={rightArrow} alt='arrow' width={24} height={24} className='block w-full h-full rounded-full object-cover object-center transition-all duration-500 group-hover:-rotate-45' />
+                                            <Image src={rightArrow}  alt='arrow' width={24} height={24} className='block w-full h-full rounded-full object-cover object-center transition-all duration-500 group-hover:-rotate-45' />
                                         </div>
                                     </div>
                                 </Link>
@@ -63,6 +63,6 @@ export default function MyStack() {
                 </motion.ul>
             </div>
 
-        </div>
+        </section>
     )
 }

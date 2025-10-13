@@ -33,7 +33,7 @@ export default function MyExperience() {
                                         <div className="bg-dark-gray-4 border border-border-color rounded-lg flex float-none gap-[10px] h-min justify-center items-center overflow-visible p-[10px] relative w-min ">
                                             <div className="flex-none aspect-square h-auto overflow-visible relative w-[30px] ">
                                                 <figure className='block absolute inset-0'>
-                                                    <Image width={30} height={30} src={exp.logo} alt="icon" className='block w-full h-full rounded-[inherit] object-cover object-center ' />
+                                                    <Image width={30} height={30} src={exp.logo} alt={`${exp.company} logo`} className='block w-full h-full rounded-[inherit] object-cover object-center ' />
                                                 </figure>
                                             </div>
                                         </div>
@@ -45,7 +45,9 @@ export default function MyExperience() {
                                                     </p>
                                                 </div>
                                                 <div className="flex-none h-auto relative whitespace-pre w-auto flex flex-col justify-start flex-shrink-0">
-                                                    <Link href={exp.link} className='font-medium cursor-pointer  text-[15px]  text-light-gray-2'>
+                                                    <Link href={exp.link} className='font-medium cursor-pointer  text-[15px]  text-light-gray-2'
+                                                    aria-label={`Visit ${exp.company} website`}
+                                                    >
                                                         {exp.link}
                                                     </Link>
                                                 </div>

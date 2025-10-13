@@ -40,8 +40,6 @@ export default function Form() {
             }, 7000);
         }, 4000);
 
-
-
     };
 
 
@@ -70,6 +68,8 @@ export default function Form() {
                                 aria-label="Full Name"
                                 value={data.name}
                                 onChange={(e) => setData({ ...data, name: e.target.value })}
+                                required
+                                pattern="[A-Za-z\s]{3,}"
 
                             />
                         </div>
@@ -82,6 +82,8 @@ export default function Form() {
                                 aria-label="Email Address"
                                 value={data.email}
                                 onChange={(e) => setData({ ...data, email: e.target.value })}
+                                required
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
 
                             />
                         </div>
@@ -95,6 +97,7 @@ export default function Form() {
                         aria-label="Message"
                         value={data.message}
                         onChange={(e) => setData({ ...data, message: e.target.value })}
+                        required
 
                     />
 

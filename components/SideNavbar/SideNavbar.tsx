@@ -33,6 +33,7 @@ export default function SideNavbar({isMenuOpen}:SideNavbarProps) {
                 {/* top */}
                 <Link
                     href="/"
+                    aria-label="Go to homepage"
                     className="bg-border-color rounded-full w-[60px] border border-zinc-800 hover:scale-95 transition-all duration-300 h-auto aspect-square p-[4px] relative overflow-hidden flex items-center justify-center flex-none flex-nowrap gap-[10px]"
                 >
                     <div className="w-[50px] aspect-square h-auto rounded-full flex-none relative bg-darkest-gray">
@@ -64,6 +65,7 @@ export default function SideNavbar({isMenuOpen}:SideNavbarProps) {
                             key={page.id}>
                             <Link
                                 href={page.href}
+                                aria-label={page.title}
                                 className={`p-3.5 group flex cursor-pointer border border-transparent items-center justify-center transition-all duration-300 h-min w-min  relative rounded-xl ${isActive
                                     ? 'bg-almost-black border-dark-gray-3 text-white'
                                     : 'hover:bg-very-dark-gray hover:border-dark-gray-3'
@@ -90,6 +92,7 @@ export default function SideNavbar({isMenuOpen}:SideNavbarProps) {
                     className="relative group items-center w-full flex justify-end max-w-max">
                     <Link
                         href="#top"
+                        aria-label="Go to top"
                         className={`p-3.5  flex cursor-pointer border border-transparent overflow-hidden items-center justify-center h-min w-min  relative rounded-xl hover:bg-very-dark-gray hover:border-dark-gray-3
                         }`}
                     >

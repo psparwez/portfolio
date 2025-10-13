@@ -64,6 +64,15 @@
 html {
   scroll-behavior: smooth !important;
 }
+html,
+:host {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
   background-color: var(--darkest-gray);
@@ -143,4 +152,13 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--dark-gray-7);
+}
+
+@layer utilities{
+  .select-none{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 }
