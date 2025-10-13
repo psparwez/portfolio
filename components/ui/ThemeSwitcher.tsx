@@ -13,18 +13,18 @@ const themes: { value: Theme; label: string; icon: React.ReactNode }[] = [
 ];
 
 const ThemeSwitcher: React.FC = () => {
-    const { setTheme, resolvedTheme } = useTheme();
+    const { theme, setTheme } = useTheme();
     const [selectedTheme, setSelectedTheme] = useState<Theme>("system");
 
     useEffect(() => {
-        if (resolvedTheme) {
-            setSelectedTheme(resolvedTheme as Theme);
+        if (theme) {
+            setSelectedTheme(theme as Theme);
         }
-    }, [resolvedTheme]);
+    }, [theme]);
 
-    const handleThemeChange = (theme: Theme) => {
-        setSelectedTheme(theme);
-        setTheme(theme);
+    const handleThemeChange = (value: Theme) => {
+        setSelectedTheme(value);
+        setTheme(value);
     };
 
     return (
@@ -36,7 +36,9 @@ const ThemeSwitcher: React.FC = () => {
             {themes.map(({ value, icon, label }) => (
                 <button
                     key={value}
-                    className={`inline-block p-2 cursor-pointer rounded-full text-light-gray-1 hover:text-white ${selectedTheme === value ? "bg-dark-gray-3 text-light-gray-4" : ""
+                    className={`inline-block p-2 cursor-pointer rounded-full text-light-gray-1 hover:text-white ${selectedTheme === value
+                        ? "bg-dark-gray-3 border border-border-color text-light-gray-4"
+                        : ""
                         }`}
                     aria-checked={selectedTheme === value}
                     aria-label={label}
