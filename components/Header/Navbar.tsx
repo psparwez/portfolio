@@ -45,17 +45,21 @@ export default function Navbar() {
         <nav className="p-6 border-b border-border-color">
             <div className="flex items-center justify-between">
                 <AvailableForWorkBtn />
-                <div className="hidden md:flex items-center gap-3">
+                <div className="hidden md:flex items-center gap-3" aria-label={`Local time in IST is ${time}`}>
                     <p className="text-light-gray-2 font-medium">Local Time ( IST )</p>
                     <div className="bg-dark-gray-1 border-[rgb(24,24,26)] p-[14px_18px] w-[110px] rounded-xl flex items-center justify-center">
-                        <p className="text-light-gray-4 text-base leading-[1em] font-semibold tracking-[0.07em]">
+                        <p className="text-light-gray-4 text-base leading-[1em] font-semibold tracking-[0.07em]" aria-hidden="true">
                             {time}
                         </p>
                     </div>
                 </div>
                 <button
                 onClick={toggleMenu}
-                className="h-11 w-11 rounded-full bg-almost-black hover:bg-dark-gray-4 border-dark-gray-4 transition-all duration-500 cursor-pointer md:hidden relative z-[2000] flex items-center justify-center">
+                className="h-11 w-11 rounded-full bg-almost-black hover:bg-dark-gray-4 border-dark-gray-4 transition-all duration-500 cursor-pointer md:hidden relative z-[2000] flex items-center justify-center"
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMenuOpen}
+                aria-controls="mobile-menu"
+                >
                     <span >
                       {
                         isMenuOpen? (
@@ -71,7 +75,7 @@ export default function Navbar() {
         </nav>
           {/* SideNavbar for mobile*/}
           {isMenuOpen && (
-            <div className="fixed inset-0 bg-black bg-opacity-50 z-10" onClick={toggleMenu}>
+            <div className="fixed inset-0 bg-black bg-opacity-50 z-10" onClick={toggleMenu}  id="mobile-menu">
                 <SideNavbar isMenuOpen={isMenuOpen}/>
             </div>
         )}

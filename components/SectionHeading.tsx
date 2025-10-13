@@ -20,7 +20,7 @@ export default function SectionHeading({ icon, title, description, children }: P
                     viewport={{ once: true }}
                     className="aspect-auto w-[30px] flex-none overflow-hidden relative">
                     <figure className='relative text-white top-0 left-0 right-0 bottom-0 rounded-[inherit]'>
-                        <Image width={30} height={30} src={icon} alt="icon" className='block w-full h-full rounded-[inherit] object-cover object-center ' />
+                        <Image width={30} height={30} src={icon}   alt={`${title} icon`} className='block w-full h-full rounded-[inherit] object-cover object-center ' />
                     </figure>
 
                 </motion.div>

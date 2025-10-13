@@ -12,7 +12,7 @@ export default function ShowCase({ isMore = true, showData = 2 }: {
     showData: number;
 }) {
     return (
-        <section className='flex items-start flex-none flex-col flex-nowrap gap-[30px] h-min justify-start overflow-visible relative w-full '>
+        <section aria-labelledby="showcase-heading" className='flex items-start flex-none flex-col flex-nowrap gap-[30px] h-min justify-start overflow-visible relative w-full '>
             <div className="flex-none h-auto relative w-full">
                 <SectionHeading title='Creative Design Showcase' icon={flyIcon} description='Explore a collection of my most innovative and visually stunning design works.' />
             </div>
@@ -44,7 +44,7 @@ export default function ShowCase({ isMore = true, showData = 2 }: {
                                         </div>
 
                                         <div className="flex-none h-auto relative">
-                                            <Link href={"https://"+item.link} target='_blank' className='bg-almost-black border border-dark-gray-4 flex cursor-pointer items-center flex-nowrap gap-[6px] h-min justify-center overflow-visible  relative w-min rounded-lg custom-padding group hover:bg-dark-gray-4 transition-all duration-500'
+                                            <Link href={"https://"+item.link}   target="_blank" rel="noopener noreferrer" aria-label={`Visit project website for ${item.title}`} className='bg-almost-black border border-dark-gray-4 flex cursor-pointer items-center flex-nowrap gap-[6px] h-min justify-center overflow-visible  relative w-min rounded-lg custom-padding group hover:bg-dark-gray-4 transition-all duration-500'
                                             >
                                                 <div className="opacity-70 aspect-square h-auto overflow-visible w-5 relative flex-none group-hover:opacity-100 duration-500 transition-all">
                                                     <figure className='absolute inset-0 w-full h-full rounded-[inherit] '>

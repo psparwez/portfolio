@@ -6,7 +6,10 @@ import { motion } from "framer-motion"
 
 export default function SocialLists() {
     return (
-        <aside className='hidden lg:block max-w-[13%] w-full  h-screen top-0 flex-none sticky z-10 '>
+        <aside className='hidden lg:block max-w-[13%] w-full  h-screen top-0 flex-none sticky z-10 ' 
+        role="complementary"
+        aria-label="Social media links"
+        >
             <div className="flex items-start overflow-hidden justify-center h-full flex-nowrap relative p-0 flex-col gap-2 ">
                 {/* middle  */}
                 <div className="flex items-start overflow-hidden justify-center h-full flex-nowrap relative p-[20px_0px_40px_30px] flex-col flex-1 border-l border-border-color">
@@ -24,7 +27,9 @@ export default function SocialLists() {
                                         once: true,
                                     }}
                                     key={social.id} className="flex items-center gap-10 ">
-                                    <Link href={social.link} target="_blank" rel="noopener noreferrer" className='bg-very-dark-gray hover:bg-dark-gray-3 transition-all duration-300 border border-dark-gray-3 p-3 group rounded-xl'>
+                                    <Link href={social.link} target="_blank"  rel="noopener noreferrer" 
+                                      aria-label={`Visit ${social.title}`} 
+                                      className='bg-very-dark-gray hover:bg-dark-gray-3 transition-all duration-300 border border-dark-gray-3 p-3 group rounded-xl'>
                                         <span className='text-light-gray-1 text-sm group-hover:text-light-gray-3 transition-all duration-300'>
                                             {social.icon}
                                         </span>

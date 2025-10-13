@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 
 export default function MyServices() {
     return (
-        <div className='flex items-start flex-none flex-col flex-nowrap gap-[30px] h-min justify-start overflow-visible relative w-full '>
+        <section aria-labelledby="services-heading" className='flex items-start flex-none flex-col flex-nowrap gap-[30px] h-min justify-start overflow-visible relative w-full '>
             <div className="flex-none h-auto relative w-full">
                 <SectionHeading icon={zapIcon} title='My Services' description='Formulating comprehensive strategies to meet your design goals and exceed expectations.' />
             </div>
@@ -32,13 +32,13 @@ export default function MyServices() {
                                     once: true,
                                 }}
                                 className="w-full">
-                                <Link href={service.link} className='bg-very-dark-gray border border-dark-gray-3 rounded-xl w-full cursor-pointer items-start flex flex-col flex-nowrap gap-[14px] h-min justify-start overflow-visible p-5 relative group '>
+                                <Link href={service.link} aria-label={`Read more about ${service.title}`} className='bg-very-dark-gray border border-dark-gray-3 rounded-xl w-full cursor-pointer items-start flex flex-col flex-nowrap gap-[14px] h-min justify-start overflow-visible p-5 relative group '>
                                     {/* top  */}
                                     <div className="flex items-center flex-none flex-nowrap gap-[10px] h-min justify-start overflow-visible p-0 relative w-full ">
                                         <div className="flex flex-none items-center flex-nowrap gap-[10px] h-min justify-center overflow-hidden p-2 relative w-min border border-border-color bg-dark-gray-3 rounded-lg ">
                                             <div className="aspect-square flex-none h-auto overflow-hidden relative w-[30px]  ">
                                                 <figure className='absolute inset-0 rounded-[inherit] w-full h-full '>
-                                                    <Image width={30} height={30} src={service.icon} alt="icon" className='block w-full h-full rounded-[inherit] object-cover object-center' />
+                                                    <Image width={30} height={30} src={service.icon} alt={`${service.title} icon`} className='block w-full h-full rounded-[inherit] object-cover object-center' />
                                                 </figure>
                                             </div>
                                         </div>
@@ -67,6 +67,6 @@ export default function MyServices() {
             </div>
 
 
-        </div>
+        </section>
     )
 }

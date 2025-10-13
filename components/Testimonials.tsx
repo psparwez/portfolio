@@ -9,7 +9,7 @@ import { motion } from "framer-motion"
 
 export default function Testimonials() {
     return (
-        <div className='flex items-start flex-none flex-col flex-nowrap gap-[30px] h-min justify-start overflow-visible relative w-full '>
+        <section aria-labelledby="testimonials-heading" className='flex items-start flex-none flex-col flex-nowrap gap-[30px] h-min justify-start overflow-visible relative w-full '>
             <div className="flex-none h-auto relative w-full">
                 <SectionHeading icon={starLig} title='Words From Happy Clients' description='Discover what satisfied clients have to say about their experiences working with me.' />
             </div>
@@ -33,7 +33,7 @@ export default function Testimonials() {
                                 <div className="border border-border-color bg-dark-gray-3 rounded-lg aspect-square flex flex-none items-center flex-nowrap gap-1 h-auto justify-center overflow-hidden p-0 relative w-[50px] ">
                                     <div className="flex-1 w-full overflow-visible relative ">
                                         <figure className='relative w-full h-full inset-0 rounded-[inherit] '>
-                                            <Image width={50} height={50} src={testimonial.avatar} alt="Avatar" className='block w-full h-full rounded-[inherit] object-cover object-center' />
+                                            <Image width={50} height={50} src={testimonial.avatar} alt={`${testimonial.name}'s avatar`} className='block w-full h-full rounded-[inherit] object-cover object-center' />
 
                                         </figure>
                                     </div>
@@ -46,7 +46,7 @@ export default function Testimonials() {
                                     <div className="flex gap-[2px] flex-nowrap flex-none items-center h-min justify-start overflow-visible p-0 relative w-full ">
                                         <div className="aspect-square h-auto w-5 overflow-visible relative flex-none  ">
                                             <figure className='relative w-full h-full inset-0 rounded-[inherit] '>
-                                                <Image width={20} height={20} src={locationIcon} alt="star" className='block w-full h-full rounded-[inherit] object-cover object-center' />
+                                                <Image width={20} height={20} src={locationIcon} alt="star" className='block w-full h-full rounded-[inherit] object-cover object-center'  />
                                             </figure>
                                         </div>
                                         <div className="flex flex-col justify-start flex-shrink-0 flex-none h-auto relative whitespace-pre-wrap w-full break-words  ">
@@ -56,7 +56,7 @@ export default function Testimonials() {
                                 </div>
 
                                 <div className="flex-none h-auto relative w-auto  ">
-                                    <Link href={`https://x.com`} className="bg-almost-black border border-dark-gray-3 rounded-[10px] cursor-pointer gap-[10px] flex items-center flex-col justify-end overflow-visible flex-nowrap h-min relative w-min custom-padding group hover:bg-dark-gray-4 transition-all duration-500 ">
+                                    <Link href={`https://x.com`}  target="_blank" rel="noopener noreferrer" aria-label={`Visit ${testimonial.name}'s X profile`} className="bg-almost-black border border-dark-gray-3 rounded-[10px] cursor-pointer gap-[10px] flex items-center flex-col justify-end overflow-visible flex-nowrap h-min relative w-min custom-padding group hover:bg-dark-gray-4 transition-all duration-500 ">
                                         <div className="opacity-70 aspect-square h-auto overflow-visible relative w-5 transition-all group-hover:opacity-100 duration-500">
                                             <figure className='relative inset-0 rounded-[inherit] '>
                                                 <Image width={20} height={20} src={XLogo} alt="star" className='block w-full h-full rounded-[inherit] object-cover object-center' />
@@ -69,7 +69,10 @@ export default function Testimonials() {
                             </div>
 
                             <div className="flex flex-none h-auto relative whitespace-pre-wrap w- break-words flex-shrink-0 justify-start ">
-                                <p className='text-[15px] text-light-gray-2 font-medium '>{testimonial.description}</p>
+                                {/* <p className='text-[15px] text-light-gray-2 font-medium '>{testimonial.description}</p> */}
+                                <blockquote className="text-light-gray-2 text-[15px] font-medium whitespace-pre-wrap">
+                                   {testimonial.description}
+                                </blockquote>
                             </div>
 
                         </div>
@@ -77,6 +80,6 @@ export default function Testimonials() {
                     </motion.div>
                 ))}
             </div>
-        </div>
+        </section>
     )
 }
