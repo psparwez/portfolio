@@ -1,4 +1,4 @@
-import { StaticImageData } from "next/image";
+import type { StaticImageData } from 'next/image';
 
 export interface pagesListsType {
   id: number;
@@ -18,6 +18,7 @@ export interface socialBrandsTypes {
   id: number;
   name: string;
   icon: string;
+  lightIcon: string;
   link: string;
 }
 
@@ -36,6 +37,7 @@ export interface myExperienceTypes {
   description: string;
   link: string;
   logo: string;
+  logoLight: string;
 }
 
 export interface myStackTypes {
@@ -43,6 +45,7 @@ export interface myStackTypes {
   title: string;
   description: string;
   logo: string;
+  lightLogo: string;
   link: string;
 }
 
@@ -51,6 +54,7 @@ export interface myServicesTypes {
   title: string;
   description: string;
   icon: string;
+  lightIcon: string;
   link: string;
 }
 export interface myShowCasesTypes {
@@ -81,6 +85,7 @@ export interface myServicesPlansTypes {
   experience: string;
   totalHoursWorked: string;
   icon: string;
+  lightIcon: string;
 }
 
 export type FAQ = {
@@ -93,4 +98,21 @@ export interface FollowerData {
   followers: string;
   url: string;
   icon: string;
+  lightIcon: string;
+}
+
+export type ChangeFrequency =
+  | 'yearly'
+  | 'daily'
+  | 'monthly'
+  | 'always'
+  | 'hourly'
+  | 'weekly'
+  | 'never';
+
+export interface SitemapPage {
+  url: string;
+  lastModified: Date;
+  changeFrequency: ChangeFrequency;
+  priority: number;
 }

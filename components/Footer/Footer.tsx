@@ -1,25 +1,33 @@
-import React from 'react'
-import ThemeSwitcher from '../ui/ThemeSwitcher'
+import React from 'react';
+
+import ThemeSwitcher from '../ui/ThemeSwitcher';
 
 export default function Footer() {
-    return (
-        <footer className='bg-darkest-gray border-t border-border-color flex flex-col items-center flex-nowrap gap-[10px] h-min justify-center overflow-visible py-10 px-0 relative w-full ' aria-label="Main site footer">
-            <div className="items-center flex flex-none flex-col flex-nowrap gap-[10px] h-min justify-center overflow-hidden p-0 relative w-full  ">
-
-                <div className="w-[80%] flex flex-col-reverse sm:flex-row items-center sm:items-start gap-5 sm:gap-0 flex-nowrap flex-none h-min justify-center overflow-hidden p-0 relative ">
-                    <div className="flex-shrink-0 flex justify-start flex-1 relative break-words whitespace-pre-wrap h-auto ">
-                        <small className='text-base sm:text-lg text-light-gray-2 font-medium' aria-label={`Copyright ${new Date().getFullYear()} Parwez. All rights reserved.`}>
-                            &copy; {new Date().getFullYear()} Parwez. All rights reserved.
-                        </small>
-                    </div>
-
-                    {/* theme toggle */}
-                    <ThemeSwitcher />
-                </div>
-            </div>
-
-        </footer>
-    )
+  return (
+    <footer
+      className='bg-darkest-gray border-border-color relative flex h-min w-full flex-col flex-nowrap items-center justify-center gap-2.5 overflow-visible border-t px-0 py-10'
+      aria-label='Main site footer'
+    >
+      <div className='relative flex h-min w-full flex-none flex-col flex-nowrap items-center justify-center gap-2.5 overflow-hidden p-0'>
+        <div className='relative flex h-min w-[80%] flex-none flex-col-reverse flex-nowrap items-center justify-center gap-5 overflow-hidden p-0 sm:flex-row sm:items-start sm:gap-0'>
+          <CopyrightText />
+          {/* theme toggle */}
+          <ThemeSwitcher />
+        </div>
+      </div>
+    </footer>
+  );
 }
 
-
+const CopyrightText = () => {
+  return (
+    <div className='relative flex h-auto flex-1 shrink-0 justify-start wrap-break-word whitespace-pre-wrap'>
+      <small
+        className='text-light-gray-2 text-base font-medium sm:text-lg'
+        aria-label={`Copyright ${new Date().getFullYear()} Parwez. All rights reserved.`}
+      >
+        &copy; {new Date().getFullYear()} Parwez. All rights reserved.
+      </small>
+    </div>
+  );
+};

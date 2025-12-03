@@ -1,42 +1,42 @@
-import React from 'react';
 import clsx from 'clsx';
+import React from 'react';
 
 interface ButtonProps {
-    icon?: React.ReactNode;
-    title: string;
-    onClick?: () => void;
-    position?: 'left' | 'right';
-    href?: string;
-    className?: string;
+  icon?: React.ReactNode;
+  title: string;
+  onClick?: () => void;
+  position?: 'left' | 'right';
+  href?: string;
+  className?: string;
 }
 
 export default function Button({
-    icon,
-    title,
-    position = "left",
-    className = "",
-    onClick,
+  icon,
+  title,
+  position = 'left',
+  className = '',
+  onClick,
 }: ButtonProps) {
-    return (
-        <button
-            onClick={onClick}
-            className={clsx(
-                "bg-almost-black hover:bg-dark-gray-4 transition-all duration-300 rounded-[10px] border border-dark-gray-4 flex gap-[6px] cursor-pointer items-center flex-nowrap justify-center overflow-visible p-[14px_18px] relative group",
-                position === "left" ? "flex-row" : "flex-row-reverse",
-                !/w-(\S+)/.test(className) && "w-full",
-                className
-            )}
-        >
-            {icon && (
-                <div>
-                    <span className="opacity-70 text-very-light-gray">{icon}</span>
-                </div>
-            )}
-            <div className="flex-none h-auto relative w-auto whitespace-pre opacity-70 flex-shrink-0 flex-col justify-start flex group-hover:opacity-100">
-                <p className="text-very-light-gray uppercase font-medium font-IBM_Plex_Mono leading-[100%] text-[15px] whitespace-pre">
-                    {title}
-                </p>
-            </div>
-        </button>
-    );
+  return (
+    <button
+      onClick={onClick}
+      className={clsx(
+        'bg-almost-black hover:bg-dark-gray-4 border-dark-gray-4 group relative flex cursor-pointer flex-nowrap items-center justify-center gap-1.5 overflow-visible rounded-[10px] border p-[14px_18px] transition-all duration-300',
+        position === 'left' ? 'flex-row' : 'flex-row-reverse',
+        !/w-(\S+)/.test(className) && 'w-full',
+        className
+      )}
+    >
+      {icon && (
+        <div>
+          <span className='text-very-light-gray opacity-70'>{icon}</span>
+        </div>
+      )}
+      <div className='relative flex h-auto w-auto flex-none shrink-0 flex-col justify-start whitespace-pre opacity-70 group-hover:opacity-100'>
+        <p className='text-very-light-gray font-IBM_Plex_Mono text-[15px] leading-[100%] font-medium whitespace-pre uppercase'>
+          {title}
+        </p>
+      </div>
+    </button>
+  );
 }
