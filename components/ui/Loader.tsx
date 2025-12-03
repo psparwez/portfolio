@@ -1,7 +1,6 @@
-import React from 'react'
-import "@/styles/loader.css";
+import '@/styles/loader.css';
+
+import React from 'react';
 export default function Loader() {
-    return (
-        <span className="loader"></span>
-    )
+  return <span className='loader'></span>;
 }

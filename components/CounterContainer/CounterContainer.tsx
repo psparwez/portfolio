@@ -1,46 +1,48 @@
-"use client"
+'use client';
 
-import React from 'react'
-import { counterLists } from '@/data/index'
-import { motion } from "framer-motion"
+import { motion } from 'motion/react';
+import React from 'react';
+import CountUp from 'react-countup';
 
-import CountUp from 'react-countup'
+import { counterLists } from '@/data/index';
 export default function CounterContainer() {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{
-                opacity: 1,
-                y: 0
-            }}
-            transition={{ duration: 0.5, type: "spring", stiffness: 100, delay: 0.7 }}
-            viewport={{ once: true }}
-            className="flex flex-none gap-5 flex-nowrap h-min justify-start py-5 relative px-0 overflow-visible items-start border-b border-dashed border-t border-dark-gray-4 w-full ">
-            <ul className=' grid grid-cols-2 sm:flex items-center gap-2 justify-between w-full' >
-                {
-                    counterLists.map(list => (
-                        <li key={list.id} className="w-full">
-                            <div className="flex-1 flex  flex-nowrap gap-[4px] h-min p-0 relative items-center overflow-visible justify-center  ">
-
-                                <div className="flex-none h-auto relative w-auto">
-                                    <div className="items-start justify-start text-[28px] font-bold text-very-light-gray ">
-                                        <CountUp end={list.value} />
-                                    </div>
-                                </div>
-                                <div className="flex flex-shrink-0 flex-col justify-start float-none h-auto relative whitespace-pre w-auto">
-                                    <h1 className='text-[34px] font-bold text-white '>+</h1>
-                                </div>
-                            </div>
-                            <div className="flex flex-shrink-0 flex-col justify-start w-full flex-none relative whitespace-pre-wrap break-words">
-                                <p className=' text-center text-light-gray-2 font-medium text-[15px]  '>{list.title}</p>
-                            </div>
-
-                        </li>
-                    ))
-
-
-                }
-            </ul>
-        </motion.div>
-    )
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{ duration: 0.5, type: 'spring', stiffness: 100, delay: 0.7 }}
+      viewport={{ once: true }}
+      className='border-dark-gray-4 relative flex h-min w-full flex-none flex-nowrap items-start justify-start gap-5 overflow-visible border-t border-b border-dashed px-0 py-5'
+    >
+      <CounterListsItem />
+    </motion.div>
+  );
 }
+
+const CounterListsItem = () => {
+  return (
+    <ul className='grid w-full grid-cols-2 items-center justify-between gap-2 sm:flex'>
+      {counterLists.map((list) => (
+        <li
+          key={list.id}
+          className='w-full'
+        >
+          <div className='relative flex h-min flex-1 flex-nowrap items-center justify-center gap-1 overflow-visible p-0'>
+            <div className='relative h-auto w-auto flex-none'>
+              <div className='font-IBM_Plex_Mono! text-very-light-gray items-start justify-start text-[28px] font-bold'>
+                <CountUp end={list.value} />
+              </div>
+            </div>
+            <h1 className='text-[34px] font-bold text-white'>+</h1>
+          </div>
+          <div className='relative flex w-full flex-none shrink-0 flex-col justify-start wrap-break-word whitespace-pre-wrap'>
+            <p className='text-light-gray-2 text-center text-[15px] font-medium'>{list.title}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+};

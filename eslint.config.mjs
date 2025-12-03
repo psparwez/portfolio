@@ -1,30 +1,39 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { defineConfig, globalIgnores } from 'eslint/config';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import prettier from 'eslint-config-prettier/flat';
+import nextVitals from 'eslint-config-next/core-web-vitals';
+import nextTs from 'eslint-config-next/typescript';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+export default defineConfig([
+  ...nextVitals,
+  ...nextTs,
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+  // Custom rules
+  {
+    files: ['**/*.{ts,tsx,js,jsx}'],
+    ignores: ['.next/**', 'out/**', 'build/**', 'node_modules/**', 'next-env.d.ts'],
 
-const eslintConfig = [
-  ...compat.config({
-    extends: [
-      "next/core-web-vitals",
-      "next/typescript",
-      "prettier",
-      "plugin:jsx-a11y/recommended",
-    ],
-    plugins: ["simple-import-sort"],
-    
-    rules: {
-      "simple-import-sort/imports": "warn",
-      "simple-import-sort/exports": "warn",
-      "@typescript-eslint/no-explicit-any": "warn",
+    plugins: {
+      'simple-import-sort': simpleImportSort,
     },
-  }),
-];
 
-export default eslintConfig;
+    rules: {
+      // TypeScript rules
+      '@typescript-eslint/consistent-type-imports': 'error',
+      '@typescript-eslint/no-import-type-side-effects': 'error',
+      '@typescript-eslint/no-explicit-any': 'warn',
+
+      // Import sorting
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
+
+      'import/order': 'off',
+    },
+  },
+
+  // Prettier must come last
+  prettier,
+
+  // Global ignores
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'node_modules/**', 'next-env.d.ts']),
+]);
