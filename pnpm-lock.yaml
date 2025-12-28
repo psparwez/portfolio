@@ -33,8 +33,8 @@ importers:
         specifier: ^0.562.0
         version: 0.562.0(react@19.2.1)
       mongoose:
-        specifier: ^9.0.0
-        version: 9.0.0
+        specifier: ^9.0.2
+        version: 9.0.2
       motion:
         specifier: ^12.23.25
         version: 12.23.25(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -528,8 +528,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@mongodb-js/saslprep@1.3.2':
-    resolution: {integrity: sha512-QgA5AySqB27cGTXBFmnpifAi7HxoGUeezwo6p9dI03MuDB6Pp33zgclqVb6oVK3j6I9Vesg0+oojW2XxB59SGg==}
+  '@mongodb-js/saslprep@1.4.4':
+    resolution: {integrity: sha512-p7X/ytJDIdwUfFL/CLOhKgdfJe1Fa8uw9seJYvdOmnP9JBWGWHW69HkOixXS6Wy9yvGf1MbhcS6lVmrhy4jm2g==}
 
   '@napi-rs/wasm-runtime@0.2.12':
     resolution: {integrity: sha512-ZVWUcfwY4E/yPitQJl481FjFo3K22D6qF0DuFH6Y/nbnE11GY5uguDxZMGXPQ8WQ0128MXQD7TnfHyK4oWoIJQ==}
@@ -2172,8 +2172,8 @@ packages:
       socks:
         optional: true
 
-  mongoose@9.0.0:
-    resolution: {integrity: sha512-J6wTGC8/hSFpy9K6kPbKDnBNoUcX4iOGCasUrRzlSKdwdVNxdscLA4oHKOQwJlHqh/TxDNg+Uzg6koCyCKP0wA==}
+  mongoose@9.0.2:
+    resolution: {integrity: sha512-+GCaqwE+X//yN9eo2M2L/n+mVti9J6vH5iQKbhD+2AArZd5iaZqK/DkmkE4S6/iYYMyVQPTXsRk7jyVOYEtJzA==}
     engines: {node: '>=20.19.0'}
 
   motion-dom@12.23.23:
@@ -3374,7 +3374,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@mongodb-js/saslprep@1.3.2':
+  '@mongodb-js/saslprep@1.4.4':
     dependencies:
       sparse-bitfield: 3.0.3
 
@@ -4985,11 +4985,11 @@ snapshots:
 
   mongodb@7.0.0:
     dependencies:
-      '@mongodb-js/saslprep': 1.3.2
+      '@mongodb-js/saslprep': 1.4.4
       bson: 7.0.0
       mongodb-connection-string-url: 7.0.0
 
-  mongoose@9.0.0:
+  mongoose@9.0.2:
     dependencies:
       kareem: 3.0.0
       mongodb: 7.0.0
