@@ -66,7 +66,7 @@
     "resend": "^6.5.2",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
-    "zod": "^4.1.13"
+    "zod": "^4.3.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.3.0",
