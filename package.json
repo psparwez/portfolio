@@ -79,7 +79,7 @@
     "@typescript-eslint/eslint-plugin": "^8.48.1",
     "@typescript-eslint/parser": "^8.53.1",
     "eslint": "^9.39.2",
-    "eslint-config-next": "16.0.6",
+    "eslint-config-next": "16.1.4",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
