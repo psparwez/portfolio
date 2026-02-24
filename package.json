@@ -65,7 +65,7 @@
     "react-fast-marquee": "^1.6.5",
     "resend": "^6.5.2",
     "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.18",
+    "tailwindcss": "^4.2.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
