@@ -69,8 +69,8 @@ importers:
         specifier: ^3.4.0
         version: 3.4.0
       tailwindcss:
-        specifier: ^4.1.18
-        version: 4.1.18
+        specifier: ^4.2.1
+        version: 4.2.1
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -125,7 +125,7 @@ importers:
         version: 12.1.1(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-tailwindcss:
         specifier: 4.0.0-beta.0
-        version: 4.0.0-beta.0(tailwindcss@4.1.18)
+        version: 4.0.0-beta.0(tailwindcss@4.2.1)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -2790,6 +2790,9 @@ packages:
   tailwindcss@4.1.18:
     resolution: {integrity: sha512-4+Z+0yiYyEtUVCScyfHCxOYP06L5Ne+JiHhY2IjR2KWMIWhJOYZKLSGZaP5HkZ8+bY0cxfzwDE5uOmzFXyIwxw==}
 
+  tailwindcss@4.2.1:
+    resolution: {integrity: sha512-/tBrSQ36vCleJkAOsy9kbNTgaxvGbyOamC30PRePTQe/o1MFwEKHQk4Cn7BNGaPtjp+PuUrByJehM1hgxfq4sw==}
+
   tapable@2.3.0:
     resolution: {integrity: sha512-g9ljZiwki/LfxmQADO3dEY1CbpmXT5Hm2fJ+QaGKwSXUylMybePR7/67YW7jOrrvjEgL1Fmz5kzyAjWVWLlucg==}
     engines: {node: '>=6'}
@@ -4466,13 +4469,13 @@ snapshots:
     dependencies:
       eslint: 9.39.2(jiti@2.6.1)
 
-  eslint-plugin-tailwindcss@4.0.0-beta.0(tailwindcss@4.1.18):
+  eslint-plugin-tailwindcss@4.0.0-beta.0(tailwindcss@4.2.1):
     dependencies:
       fast-glob: 3.3.3
       postcss: 8.5.6
       synckit: 0.11.11
-      tailwind-api-utils: 1.0.3(tailwindcss@4.1.18)
-      tailwindcss: 4.1.18
+      tailwind-api-utils: 1.0.3(tailwindcss@4.2.1)
+      tailwindcss: 4.2.1
 
   eslint-scope@8.4.0:
     dependencies:
@@ -5703,16 +5706,18 @@ snapshots:
     dependencies:
       '@pkgr/core': 0.2.9
 
-  tailwind-api-utils@1.0.3(tailwindcss@4.1.18):
+  tailwind-api-utils@1.0.3(tailwindcss@4.2.1):
     dependencies:
       enhanced-resolve: 5.18.3
       jiti: 2.6.1
       local-pkg: 1.1.2
-      tailwindcss: 4.1.18
+      tailwindcss: 4.2.1
 
   tailwind-merge@3.4.0: {}
 
   tailwindcss@4.1.18: {}
+
+  tailwindcss@4.2.1: {}
 
   tapable@2.3.0: {}
 
