@@ -70,7 +70,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^20.4.1",
-    "@commitlint/config-conventional": "^20.3.1",
+    "@commitlint/config-conventional": "^20.4.2",
     "@eslint/eslintrc": "^3.3.3",
     "@next/eslint-plugin-next": "^16.1.6",
     "@types/node": "^25.0.10",
