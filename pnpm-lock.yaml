@@ -15,8 +15,8 @@ importers:
         specifier: ^0.13.10
         version: 0.13.10(typescript@5.9.3)(zod@4.3.6)
       '@t3-oss/env-nuxt':
-        specifier: ^0.13.10
-        version: 0.13.10(typescript@5.9.3)(zod@4.3.6)
+        specifier: ^0.13.11
+        version: 0.13.11(typescript@5.9.3)(zod@4.3.6)
       '@tailwindcss/postcss':
         specifier: ^4.2.1
         version: 4.2.1
@@ -633,6 +633,23 @@ packages:
       zod:
         optional: true
 
+  '@t3-oss/env-core@0.13.11':
+    resolution: {integrity: sha512-sM7GYY+KL7H/Hl0BE0inWfk3nRHZOLhmVn7sHGxaZt9FAR6KqREXAE+6TqKfiavfXmpRxO/OZ2QgKRd+oiBYRQ==}
+    peerDependencies:
+      arktype: ^2.1.0
+      typescript: '>=5.0.0'
+      valibot: ^1.0.0-beta.7 || ^1.0.0
+      zod: ^3.24.0 || ^4.0.0
+    peerDependenciesMeta:
+      arktype:
+        optional: true
+      typescript:
+        optional: true
+      valibot:
+        optional: true
+      zod:
+        optional: true
+
   '@t3-oss/env-nextjs@0.13.10':
     resolution: {integrity: sha512-JfSA2WXOnvcc/uMdp31paMsfbYhhdvLLRxlwvrnlPE9bwM/n0Z+Qb9xRv48nPpvfMhOrkrTYw1I5Yc06WIKBJQ==}
     peerDependencies:
@@ -650,8 +667,8 @@ packages:
       zod:
         optional: true
 
-  '@t3-oss/env-nuxt@0.13.10':
-    resolution: {integrity: sha512-Aphd+oPdyLerp3HQA61Bqo1bVUZRLRGMsNm9nshoLYcPPFmE9ZI0egMOZ4lQFsEdM1pZp/Q8ZSanlzUcbHwwTw==}
+  '@t3-oss/env-nuxt@0.13.11':
+    resolution: {integrity: sha512-2zax9aRigiF2gKKSuSEyTojNec2h2lK+lP9clVdhQ/eRRygF7kbvRqzCcmqH+ND1koE0WO+XTUly8kJ1oGhkrg==}
     peerDependencies:
       arktype: ^2.1.0
       typescript: '>=5.0.0'
@@ -3495,6 +3512,11 @@ snapshots:
       typescript: 5.9.3
       zod: 4.3.6
 
+  '@t3-oss/env-core@0.13.11(typescript@5.9.3)(zod@4.3.6)':
+    optionalDependencies:
+      typescript: 5.9.3
+      zod: 4.3.6
+
   '@t3-oss/env-nextjs@0.13.10(typescript@5.9.3)(zod@4.3.6)':
     dependencies:
       '@t3-oss/env-core': 0.13.10(typescript@5.9.3)(zod@4.3.6)
@@ -3502,9 +3524,9 @@ snapshots:
       typescript: 5.9.3
       zod: 4.3.6
 
-  '@t3-oss/env-nuxt@0.13.10(typescript@5.9.3)(zod@4.3.6)':
+  '@t3-oss/env-nuxt@0.13.11(typescript@5.9.3)(zod@4.3.6)':
     dependencies:
-      '@t3-oss/env-core': 0.13.10(typescript@5.9.3)(zod@4.3.6)
+      '@t3-oss/env-core': 0.13.11(typescript@5.9.3)(zod@4.3.6)
     optionalDependencies:
       typescript: 5.9.3
       zod: 4.3.6
