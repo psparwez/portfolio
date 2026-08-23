@@ -1,28 +1,57 @@
-import { questionMarkIcon, questionMarkIconLight } from '@/app/assets/assets';
-import FAQ from '@/components/FAQ/FAQ';
-import SectionHeading from '@/components/SectionHeading';
-import { faqData } from '@/data';
+import ContactSection from './_components/contact-client';
+import FAQsSection from '@/components/faqs';
+import SectionHeading from '@/components/section-heading';
+import { ICONS } from '@/components/icons';
 
-import ContactSection from './_components/contact-section';
+import { createMetadata } from '@/lib/seo';
+import { createBreadcrumbSchema, createWebPageSchema } from '@/lib/json-ld';
+import { JsonLd } from '@/components/json-ld';
+
+export const metadata = createMetadata({
+  title: 'Contact',
+  description:
+    'Get in touch with Your Name for freelance projects, web development, collaborations, and software development opportunities.',
+  path: '/contact',
+});
 
 export default function ContactPage() {
+  const schema = createWebPageSchema({
+    name: 'Contact | PS Parwez',
+    description:
+      'Contact PS Parwez for web development, frontend development, and collaboration opportunities.',
+    path: '/contact',
+    type: 'ContactPage',
+  });
   return (
     <>
-      <div className='relative flex h-min w-full flex-1 flex-col items-center justify-start gap-0 overflow-hidden p-0'>
-        <div className='flex w-full max-w-full flex-col items-center gap-[60px] p-[80px_0px] sm:px-5 lg:w-[80%] lg:max-w-[750px] lg:px-0'>
-          <ContactSection />
+      <JsonLd data={schema} />
+      <JsonLd data={breadcrumbSchema} />
 
-          {/* FAQ's */}
-          <SectionHeading
-            darkImage={questionMarkIcon}
-            lightImage={questionMarkIconLight}
-            title='Common Queries'
-            description='Get Answers to Common Queries. Your Questions, Addressed Simply.'
-          />
-
-          <FAQ data={faqData} />
-        </div>
+      <ContactSection />
+      <div className='space-y-10'>
+        <SectionHeading
+          title='Common Queries'
+          description='Get Answers to Common Queries. Your Questions, Addressed Simply.'
+          icon={
+            <ICONS.questionMark
+              width={30}
+              height={30}
+            />
+          }
+        />
+        <FAQsSection />
       </div>
     </>
   );
 }
+
+const breadcrumbSchema = createBreadcrumbSchema([
+  {
+    name: 'Home',
+    path: '/',
+  },
+  {
+    name: 'Contact',
+    path: '/contact',
+  },
+]);

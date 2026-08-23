@@ -1,11 +1,10 @@
 # 👋 Portfolio Portfolio
+
 A sleek and modern portfolio website built with Next.js, showcasing professional experience and projects in a minimalist, user-friendly design. 💯
 
-
-
 ## 📸 Demo Screenshots
-![Image](https://github.com/user-attachments/assets/79250590-04ed-43fa-82ed-4cc64b1a7971)
 
+![Image](https://github.com/user-attachments/assets/79250590-04ed-43fa-82ed-4cc64b1a7971)
 
 ## Getting Started
 
@@ -16,7 +15,7 @@ Follow these steps to run the project locally:
 Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v18 or later)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.com/) or [yarn](https://yarnpkg.com/)
 
 ### Installation
 
@@ -30,6 +29,8 @@ Make sure you have the following installed:
 2. Install dependencies:
 
    ```bash
+   pnpm install
+   # or
    npm install
    # or
    yarn install
@@ -38,6 +39,8 @@ Make sure you have the following installed:
 3. Run the development server:
 
    ```bash
+   pnpm run dev
+   # or
    npm run dev
    # or
    yarn dev
@@ -50,6 +53,9 @@ Make sure you have the following installed:
 To create an optimized production build, run:
 
 ```bash
+pnpm run build
+pnpm start
+# or
 npm run build
 npm start
 # or
