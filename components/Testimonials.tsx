@@ -2,7 +2,6 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 
 import { ICONS } from './icons';
 import SectionHeading from './section-heading';
