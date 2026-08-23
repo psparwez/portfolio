@@ -21,7 +21,7 @@ export default function Button({
     <button
       onClick={onClick}
       className={clsx(
-        'bg-almost-black hover:bg-dark-gray-4 border-dark-gray-4 group relative flex cursor-pointer flex-nowrap items-center justify-center gap-1.5 overflow-visible rounded-[10px] border p-[14px_18px] transition-all duration-300',
+        'bg-dark-gray-2 border-dark-gray-3 dark:bg-almost-black hover:bg-dark-gray-4 dar:border-dark-gray-4 group relative flex cursor-pointer flex-nowrap items-center justify-center gap-1.5 overflow-visible rounded-[10px] border p-[14px_18px] transition-all duration-300',
         position === 'left' ? 'flex-row' : 'flex-row-reverse',
         !/w-(\S+)/.test(className) && 'w-full',
         className

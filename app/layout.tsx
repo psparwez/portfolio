@@ -1,88 +1,48 @@
 import '@/styles/globals.css';
-
-import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next';
-import Script from 'next/script';
-import type { WebSite, WithContext } from 'schema-dts';
-
-import Footer from '@/components/Footer/Footer';
-import PageLayout from '@/components/layouts/page-layout';
-import Navbar from '@/components/Navbar/Navbar';
-import { siteConfig } from '@/config/site-config';
-import developerConfig from '@/data/developer.config.json';
+import RootLayoutInternel from '@/components/layouts/root-layout';
 import { fonts } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
-import NextTopLoaderProvider from '@/providers/nexttop-loader-provider';
-import { ThemeProvider } from '@/providers/theme-provider';
-
-function getWebSiteJsonLd(): WithContext<WebSite> {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: siteConfig.name,
-    url: siteConfig.url,
-    alternateName: [developerConfig.username],
-  };
-}
+import Providers from '@/components/providers';
+import { siteConfig } from '@/lib/seo';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+
   title: {
     default: siteConfig.title,
-    template: `%s | ${siteConfig.title}`,
+    template: `%s | ${siteConfig.name}`,
   },
+
   description: siteConfig.description,
-  keywords: Array.isArray(siteConfig.keywords)
-    ? siteConfig.keywords.join(', ')
-    : siteConfig.keywords,
+  creator: siteConfig.creator,
+  authors: siteConfig.authors,
+  publisher: siteConfig.publisher,
+
+  keywords: siteConfig.keywords,
+
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
-  icons: siteConfig.icons,
 
   openGraph: {
     type: 'website',
-    url: siteConfig.url,
-    title: siteConfig.title,
-    description: siteConfig.description,
-    siteName: siteConfig.title,
+    siteName: siteConfig.name,
     images: [
       {
-        url: '/opengraph-image.jpg',
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: 'Preview of PS Parwez Portfolio',
+        alt: siteConfig.title,
       },
     ],
   },
+
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.title,
-    description: siteConfig.description,
-    images: ['/opengraph-image.jpg'],
-    creator: siteConfig.twitterHandle,
-  },
-
-  alternates: {
-    canonical: siteConfig.url,
-  },
-  authors: [
-    {
-      name: siteConfig.author?.name ?? 'PS Parwez',
-      url: siteConfig.author?.url ?? siteConfig.url,
-    },
-  ],
-  verification: {
-    google: siteConfig.googleSiteVerificationId,
   },
 };
 
@@ -95,6 +55,8 @@ export default function RootLayout({
     <html
       lang='en'
       suppressHydrationWarning
+      className={cn('antialiased', fonts)}
+      data-scroll-behavior='smooth'
     >
       <head>
         <link
@@ -103,31 +65,13 @@ export default function RootLayout({
           sizes='any'
           type='image/x-icon'
         />
-
-        <Script
-          id='website-jsonld'
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getWebSiteJsonLd()).replace(/</g, '\\u003c'),
-          }}
-        />
       </head>
-      <body className={cn('antialiased', fonts)}>
-        <ThemeProvider
-          attribute='data-theme'
-          defaultTheme='dark'
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NextTopLoaderProvider />
-          <PageLayout>
-            <Navbar />
-            {children}
-            <Footer />
-          </PageLayout>
-        </ThemeProvider>
-        <Analytics />
+      <body>
+        <Providers>
+          <RootLayoutInternel>{children}</RootLayoutInternel>
+        </Providers>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

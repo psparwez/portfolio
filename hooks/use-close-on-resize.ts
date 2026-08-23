@@ -1,36 +1,44 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
-export function useCloseOnResize(
-  onClose: () => void,
-  breakpoint: number = 768,
-  debounceMs: number = 0
-) {
+export function useCloseOnResize(onClose: () => void, breakpoint = 768, debounceMs = 0) {
   const callbackRef = useRef(onClose);
+  const wasMobileRef = useRef(false);
 
   useEffect(() => {
     callbackRef.current = onClose;
   }, [onClose]);
 
-  const handler = useCallback(() => {
-    if (window.innerWidth >= breakpoint) {
-      callbackRef.current();
-    }
-  }, [breakpoint]);
-
   useEffect(() => {
-    if (debounceMs > 0) {
-      let timeout: NodeJS.Timeout | null = null;
+    const checkBreakpoint = () => {
+      const isMobile = window.innerWidth < breakpoint;
 
-      const debounced = () => {
+      // Only close when crossing mobile → desktop
+      if (wasMobileRef.current && !isMobile) {
+        callbackRef.current();
+      }
+
+      wasMobileRef.current = isMobile;
+    };
+
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+
+    const handleResize = () => {
+      if (debounceMs > 0) {
         if (timeout) clearTimeout(timeout);
-        timeout = setTimeout(handler, debounceMs);
-      };
+        timeout = setTimeout(checkBreakpoint, debounceMs);
+      } else {
+        checkBreakpoint();
+      }
+    };
 
-      window.addEventListener('resize', debounced);
-      return () => window.removeEventListener('resize', debounced);
-    }
+    // Establish initial state
+    wasMobileRef.current = window.innerWidth < breakpoint;
 
-    window.addEventListener('resize', handler);
-    return () => window.removeEventListener('resize', handler);
-  }, [handler, debounceMs]);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (timeout) clearTimeout(timeout);
+    };
+  }, [breakpoint, debounceMs]);
 }
