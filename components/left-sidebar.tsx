@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { MAIN_MENU, SITE_CONFIG } from '@/config/site-config';
-import Tooltip from './ui/tooltop';
+import Tooltip from './ui/tooltip';
 
 interface LeftSidebarProps {
   isMenuOpen?: boolean;

@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 import SectionHeading from '@/components/section-heading';
 import { ICONS } from '@/components/icons';
 import ContactForm from './contact-form';
-import Button from '@/components/ui/Button';
+import Button from '@/components/ui/button';
 
 export default function ContactSection() {
   return (
