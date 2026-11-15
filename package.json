@@ -36,7 +36,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^1.31.0",
     "motion": "^13.1.0",
-    "next": "16.3.1",
+    "next": "16.3.2",
     "next-themes": "^0.4.6",
     "react": "19.2.8",
     "react-countup": "^6.5.3",
